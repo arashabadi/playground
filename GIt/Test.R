@@ -3,7 +3,7 @@ print("Hello")
 # Sample data
 x <- c(1, 2, 3, 4, 5)
 y <- c(10, 20, 25, 30, 35)
-
+z <- data.frame(x,y)
 # Create the plot
 plot(x, y, type = "o", col = "blue", 
      xlab = "X-axis", ylab = "Y-axis", 
