@@ -229,4 +229,4 @@ While the fields of **Biomedical Engineering** and **Biotechnology** share some 
 
 
 
-_Thanks to Pedram for his help in comparing Biomedical Engineering and Bioinformatics._
+_Thanks to [Pedram](https://github.com/PedramKhalaj) for his help in comparing Biomedical Engineering and Bioinformatics._
