@@ -1,66 +1,33 @@
 Home
 ├── Prerequisites
-│   ├── Introduction to Biology
-│   ├── Introduction to Programming
-│   ├── Introduction to Mathematics and Statistics
-├── Main Sections
-│   ├── Data Analysis and Interpretation
-│   │   ├── Genomics and Transcriptomics
-│   │   ├── Proteomics and Metabolomics
-│   │   ├── Epigenomics
-|   |   ├── Other Omics
-│   │   ├── Functional Genomics
-│   │   ├── Network and Pathway Analysis
-│   ├── Modeling and Simulation
-│   │   ├── Molecular Modeling and Dynamics
-│   │   ├── Systems Biology
-│   │   ├── Computational Ecology and Evolution
-│   │   ├── Evolutionary Biology
-│   │   ├── Computational Pharmacology
-│   ├── Integrated Platforms and Tools
-│   │   ├── SaaS Platforms for Bioinformatics
-│   │   ├── Cloud Computing and Data Management
-│   │   ├── Collaborative Research Tools
-├── Additional Resources
-    ├── Online Courses
-    ├── Books and Publications
-    ├── Conferences and Workshops
-    ├── Open-Source Projects
-
-
-
-Summary
-This revised Wiki structure integrates specialized fields directly into the main sections, making the content more accessible and streamlined. The organization reflects the interconnected nature of bioinformatics and computational biology, ensuring that each area of study is placed within the broader context of data analysis, modeling, and tools.
-
-Data Analysis and Interpretation: Now includes detailed sections on genomics, transcriptomics, proteomics, metabolomics, epigenomics, and network/pathway analysis.
-
-Modeling and Simulation: Integrates molecular modeling, systems biology, computational pharmacology, and evolutionary biology into a unified framework.
-
-Integrated Platforms and Tools: Focuses on SaaS platforms, cloud computing, and collaborative tools that support bioinformatics and computational biology research.
-
-By following this structure, the Wiki will serve as a comprehensive resource for both newcomers and experienced researchers, providing clear pathways for learning and exploration in these dynamic fields.
-
-
-##### NEW ####
-
-Home
-├── Prerequisites
 │   ├── Biology Fundamentals
 │   │   ├── Molecular and Cellular Biology
 │   │   ├── Genetics and Genomics
+│   │   ├── Biochemistry
+│   │   ├── Biophysics
+│   │   ├── Immunology
 │   ├── Programming Fundamentals
 │   │   ├── Python for Bioinformatics
 │   │   ├── R for Statistical Computing
 │   │   ├── Unix/Linux Command Line
+│   │   ├── Version Control with Git
+│   │   ├── Best Practices in Coding
 │   ├── Mathematics and Statistics
 │   │   ├── Probability and Statistics
 │   │   ├── Linear Algebra and Calculus
 │   │   ├── Algorithms and Data Structures
+│   │   ├── Discrete Mathematics
+│   │   ├── Advanced Statistical Methods
 │   ├── Introduction to Bioinformatics
-│       ├── Bioinformatics Tools and Databases
-│       ├── Sequence Alignment and Analysis
-│       ├── Basics of Next-Generation Sequencing (NGS)
-│       ├── Introduction to Omics Technologies
+│   │   ├── Bioinformatics Tools and Databases
+│   │   ├── Sequence Alignment and Analysis
+│   │   ├── Basics of Next-Generation Sequencing (NGS)
+│   │   ├── Introduction to Omics Technologies
+│   │   ├── Data Management in Bioinformatics
+│   │   ├── Ethical Considerations in Bioinformatics
+│   ├── Interdisciplinary Knowledge
+│       ├── Introduction to Systems Biology
+│       ├── Evolutionary Biology
 ├── Main Sections
 │   ├── Omics Data Analysis and Interpretation
 │   │   ├── Genomics and Transcriptomics
@@ -439,3 +406,96 @@ As you navigate the **Bioinformatics and Computational Biology Roadmap**, you ma
 
 ## Summary
 While the fields of **Biomedical Engineering** and **Biotechnology** share some computational tools and biological concepts with **Bioinformatics** and **Computational Biology**, their core focuses are different. Biomedical Engineering and Biotechnology emphasize the design, creation, and optimization of physical devices, materials, and systems that interact with biological organisms. In contrast, bioinformatics is dedicated to the analysis of biological data, such as DNA sequences, protein structures, and gene expression patterns. However, in areas like **Genetic Engineering** and **CRISPR**, bioinformatics is deeply integrated, supporting the computational aspects necessary for these advanced biotechnological applications.
+
+
+
+## Biology Fundamentals
+### Molecular and Cellular Biology
+- **Primary Resources**:
+  - *Molecular Biology of the Cell* by Alberts et al. (Comprehensive but detailed)
+  - *Molecular Cell Biology* by Lodish et al. (In-depth, heavy focus on cell structure and function)
+- **Secondary Resources**:
+  - *Physical Biology of the Cell* by Rob Phillips (For a more biophysical approach)
+
+### Genetics and Genomics
+- **Primary Resources**:
+  - *Lewin's Genes* by Jocelyn E. Krebs et al. (Foundational for molecular genetics)
+  - *Principles of Genetics* by Peter Snustad and Michael J. Simmons (Fundamentals of classical genetics)
+  - *Medical Genetics* by Jorde, Carey, and Bamshad (Focus on human genetics and clinical applications)
+- **Supplementary Readings**:
+  - Review articles in *Nature Reviews Genetics* and *Annual Review of Genetics* for up-to-date research trends
+
+### Biochemistry
+- **Primary Resources**:
+  - *Lehninger Principles of Biochemistry* by Nelson and Cox (Comprehensive and detailed, suitable for molecular-level studies)
+  - *Biochemistry* by Jeremy M. Berg et al. (Molecular-focused, good for detailed biochemical pathways)
+  - *Harper's Illustrated Biochemistry* by Victor W. Rodwell et al. (More clinical perspective)
+
+### Biophysics
+- **Primary Resources**:
+  - *Physical Biology of the Cell* by Rob Phillips (Interdisciplinary approach, combining physics and biology)
+  - *Biophysical Chemistry* by Cantor and Schimmel (Foundations of physical chemistry applied to biology)
+
+### Immunology
+- **Primary Resources**:
+  - *Cellular and Molecular Immunology* by Abul K. Abbas, Andrew H. Lichtman, and Shiv Pillai (Detailed and current overview)
+  - *Immunology: A Short Course* by Richard Coico and Geoffrey Sunshine (Good for a concise, yet thorough overview)
+  - *The Immune System* by Peter Parham (Well-rounded introduction with a focus on the molecular aspects)
+
+### Additional Resources
+- **Reference Guidelines**:
+  - Review the curriculum and course outlines from official bodies (e.g., Ministry of Science and Ministry of Health)
+  - Use these as a baseline to ensure comprehensive coverage of essential topics
+- **Advanced Readings**:
+  - Focus on recent review papers and primary research articles in top-tier journals for up-to-date information
+
+
+
+Certainly! Here are some additional topics and resources that could further enhance the "Prerequisites" section, making it more comprehensive for someone preparing to delve into advanced bioinformatics and genomics:
+
+### Bioinformatics Foundations
+- **Basic Concepts of Bioinformatics**:
+  - *Bioinformatics: Sequence and Genome Analysis* by David W. Mount (Good for understanding the basics of bioinformatics tools and sequence analysis)
+  - *Essential Bioinformatics* by Jin Xiong (A concise introduction to bioinformatics principles)
+
+- **Understanding Biological Databases**:
+  - *Database Annotation in Molecular Biology: Principles and Practice* by Arthur M. Lesk (Covers the fundamentals of biological databases and their use in bioinformatics)
+  - Tutorials on major databases such as NCBI, UniProt, and Ensembl
+
+### Advanced Mathematics for Bioinformatics
+- **Discrete Mathematics**:
+  - *Discrete Mathematics and Its Applications* by Kenneth H. Rosen (Important for understanding algorithms, combinatorics, and graph theory as applied to bioinformatics)
+  
+- **Advanced Statistical Methods**:
+  - *Applied Multivariate Statistical Analysis* by Richard A. Johnson and Dean W. Wichern (Covers multivariate statistical techniques often used in bioinformatics)
+  - *The Elements of Statistical Learning* by Trevor Hastie, Robert Tibshirani, and Jerome Friedman (Focus on machine learning methods with statistical foundations)
+
+### Data Management and Computational Skills
+- **Data Management in Bioinformatics**:
+  - *Managing and Mining Genome Databases* by Bertone et al. (Explains data management techniques specific to large biological datasets)
+
+- **Data Wrangling and Cleaning**:
+  - *Python for Data Analysis* by Wes McKinney (Focus on data manipulation and cleaning using pandas, crucial for preprocessing bioinformatics data)
+  - *R for Data Science* by Hadley Wickham and Garrett Grolemund (Good for data wrangling in R, which is often used in statistical analysis in bioinformatics)
+
+### Software Engineering Practices
+- **Version Control and Collaboration**:
+  - Learn Git and GitHub for managing code versions and collaborating on bioinformatics projects.
+  - *Pro Git* by Scott Chacon and Ben Straub (Comprehensive guide to Git, essential for reproducibility and collaboration in bioinformatics research)
+
+- **Best Practices in Coding**:
+  - *Clean Code: A Handbook of Agile Software Craftsmanship* by Robert C. Martin (Focus on writing clean, maintainable code, which is critical in bioinformatics projects)
+
+### Ethics and Responsible Conduct of Research
+- **Ethical Considerations in Bioinformatics**:
+  - *Bioinformatics: The Ethics of Data Use and Computational Technologies* (Discusses the ethical use of genomic data and issues like data privacy and consent)
+  - Guidelines on ethical considerations from bodies like the NIH and other research institutions
+
+### Interdisciplinary Knowledge
+- **Introduction to Systems Biology**:
+  - *Systems Biology: Simulation of Dynamic Network States* by Bernhard Ø. Palsson (Introduces concepts of systems biology, essential for understanding complex biological interactions)
+
+- **Evolutionary Biology**:
+  - *Evolution* by Douglas J. Futuyma (Provides a solid foundation in evolutionary theory, which is fundamental in comparative genomics and phylogenetics)
+
+These additions will provide a more rounded preparation for anyone venturing into bioinformatics and genomics, ensuring they have the necessary foundation across biological, computational, and ethical dimensions.
