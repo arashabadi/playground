@@ -70,13 +70,14 @@ Home
 │   │   ├── Single-Cell Omics
 │   │   ├── Functional Genomics
 │   │   ├── Network and Pathway Analysis
+│   │   ├── Machine Learning and AI in Multi-Omics Data Analysis
 │   ├── Modeling and Simulation
 │   │   ├── Molecular Modeling and Dynamics
 │   │   ├── Systems Biology
 │   │   ├── Computational Ecology and Evolution
 │   │   ├── Evolutionary Biology and Phylogenetics
 │   │   ├── Computational Pharmacology and Drug Design
-│   │   ├── Machine Learning and AI in Biology
+│   │   ├── Machine Learning and AI in Structural Biology
 │   │   ├── Mathematical Modeling of Biological Systems
 │   ├── Integrated Platforms, Tools, and Technologies
 │   │   ├── SaaS Platforms for Bioinformatics
@@ -85,7 +86,6 @@ Home
 │   │   ├── Collaborative Research Tools
 │   │   ├── Data Visualization Techniques
 │   │   ├── Big Data in Bioinformatics
-│   │   ├── Data Integration and Multi-Omics Analysis
 ├── Specialized Topics
 │   ├── Clinical Bioinformatics
 │   ├── Agricultural Bioinformatics
