@@ -181,11 +181,4 @@ As you navigate the **Bioinformatics and Computational Biology Roadmap**, you ma
 ## Summary
 While the fields of **Biomedical Engineering** share some computational tools and biological concepts with **Bioinformatics** and **Computational Biology**, their core focuses are different. Biomedical Engineering and Biotechnology emphasize the design, creation, and optimization of physical devices, materials, and systems that interact with biological organisms. In contrast, bioinformatics is dedicated to the analysis of biological data, such as DNA sequences, protein structures, and gene expression patterns. However, in areas like **Genetic Engineering** and **CRISPR**, bioinformatics is deeply integrated, supporting the computational aspects necessary for these advanced biotechnological applications.
 
-
-
-
-
-
-
-
 _Thanks to [Pedram](https://github.com/PedramKhalaj) for his help in comparing Biomedical Engineering and Bioinformatics._

@@ -1,4 +1,5 @@
-<!-- This would be a Hidden Struct. for the developer
+<!-- Hidden Structure for the Developer:
+
 Home
 ├── Prerequisites
 │   ├── Biology Fundamentals
@@ -27,23 +28,23 @@ Home
 │   │   ├── Data Management in Bioinformatics
 │   │   ├── Ethical Considerations in Bioinformatics
 │   ├── Interdisciplinary Knowledge
-│       ├── Introduction to Systems Biology
-│       ├── Evolutionary Biology
+│   │   ├── Introduction to Systems Biology
+│   │   ├── Evolutionary Biology
 │   ├── Project Management and Communication Skills
-│       ├── Collaboration with Multidisciplinary Teams
-│       ├── Effective Communication of Scientific Research
+│   │   ├── Collaboration with Multidisciplinary Teams
+│   │   ├── Effective Communication of Scientific Research
 │   ├── Case Studies and Practical Applications
-│       ├── Real-World Applications of Bioinformatics
-│       ├── Case Studies in Genomics, Proteomics, etc.
-│       ├── Hands-On Projects with Public Datasets (NCBI, EMBL, TCGA)
-│       ├── Recommended Platforms and Software (Galaxy, Cytoscape)
+│   │   ├── Real-World Applications of Bioinformatics
+│   │   ├── Case Studies in Genomics, Proteomics, etc.
+│   │   ├── Hands-On Projects with Public Datasets (NCBI, EMBL, TCGA)
+│   │   ├── Recommended Platforms and Software (Galaxy, Cytoscape)
 │   ├── Emerging Technologies
-│       ├── CRISPR and Gene Editing
-│       ├── Quantum Computing in Bioinformatics
+│   │   ├── CRISPR and Gene Editing
+│   │   ├── Quantum Computing in Bioinformatics
 │   ├── Ethical and Societal Impact
-│       ├── Data Privacy in Bioinformatics
-│       ├── Bioterrorism and Biosecurity
-│       ├── Impact on Healthcare Systems
+│   │   ├── Data Privacy in Bioinformatics
+│   │  ├── Bioterrorism and Biosecurity
+│   │   ├── Impact on Healthcare Systems
 
 ├── Main Sections
 │   ├── Omics Data Analysis and Interpretation
@@ -54,14 +55,12 @@ Home
 │   │   ├── Single-Cell Omics
 │   │   ├── Functional Genomics
 │   │   ├── Network and Pathway Analysis
-│   │   ├── Machine Learning and AI in Multi-Omics Data Analysis
 │   ├── Modeling and Simulation
 │   │   ├── Molecular Modeling and Dynamics
 │   │   ├── Systems Biology
 │   │   ├── Computational Ecology and Evolution
 │   │   ├── Evolutionary Biology and Phylogenetics
 │   │   ├── Computational Pharmacology and Drug Design
-│   │   ├── Machine Learning and AI in Structural Biology
 │   │   ├── Mathematical Modeling of Biological Systems
 │   ├── Integrated Platforms, Tools, and Technologies
 │   │   ├── SaaS Platforms for Bioinformatics
@@ -72,6 +71,15 @@ Home
 │   │   ├── Big Data in Bioinformatics
 
 ├── Specialized Topics
+│   ├── Machine Learning and AI in Multi-Omics Data Analysis & Structural Biology
+│   │   ├── Introduction to Machine Learning
+│   │   ├── Introduction to AI
+│   │   ├── Applications of Machine Learning in Bioinformatics
+│   │   ├── Deep Learning in Genomics
+│   │   ├── AI for Drug Discovery
+│   │   ├── Tools and Frameworks (TensorFlow, PyTorch, etc.)
+│   │   ├── Case Studies in Machine Learning and AI
+│   │   ├── Ethical Considerations in AI
 │   ├── Clinical Bioinformatics
 │   ├── Agricultural Bioinformatics
 │   ├── Environmental Bioinformatics
