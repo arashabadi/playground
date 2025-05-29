@@ -18,6 +18,7 @@
 module load Anaconda3
 conda activate myenv
 ```
+
 ```{r, include=FALSE} 
 # libraries to load
 Sys.which("R") # to check env address 
@@ -31,6 +32,32 @@ suppressPackageStartupMessages({
   library(ggplot2)       # plotting
 })
 ```
+
+
+Note: in an R Markdown (.Rmd) document, a code chunk like this:
+    ```{python}
+    print("Hello from Python!")
+    ```
+**does run using `reticulate`** under the hood, as long as:
+- The `reticulate` package is installed (available in the conda environment) and loaded.
+- The Python environment is correctly configured via `reticulate::use_condaenv()`
+
+
+
+### 🛠️ How to control the Python environment
+If you want to explicitly specify the Python or conda environment used, include this in a setup chunk before any Python code:
+
+```r
+```{r setup, include=FALSE}
+library(reticulate)
+use_condaenv("myenv", required = TRUE)
+```
+
+Or if you're using virtualenv:
+```r
+use_virtualenv("myenv", required = TRUE)
+```
+
 
 ## Local (Windows)
 
