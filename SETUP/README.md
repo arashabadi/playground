@@ -70,7 +70,7 @@ use_virtualenv("myenv", required = TRUE)
 ```{bash}
 module load Anaconda3
 conda activate myenv
-python -m ipykernel install --user --name jlenv --disply-name "jlenv"
+python -m ipykernel install --user --name myenv --disply-name "myenv"
 ```
 
 
