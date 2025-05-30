@@ -48,8 +48,6 @@ Note: in an R Markdown (.Rmd) document, a code chunk like this:
 - The `reticulate` package is installed (available in the conda environment) and loaded.
 - The Python environment is correctly configured via `reticulate::use_condaenv()`
 
-
-
 🛠️ How to control the Python environment
 If you want to explicitly specify the Python or conda environment used, include this in a setup chunk before any Python code:
 
@@ -63,7 +61,7 @@ Or if you're using virtualenv:
 ```r
 use_virtualenv("myenv", required = TRUE)
 ```
-
+-----
 
 ### Connect conda environment and Kernel in JupyterLab
 
