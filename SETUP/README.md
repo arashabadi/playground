@@ -142,7 +142,20 @@ will be completed soon!
     - And that will source the conda.sh script
     - So conda will be available from the start 🎉
 
+* Channel configuration for conda:
+```{bash}
+conda config --show channels
+```
+# add channels
+```{bash}
+conda config --add channels conda-forge && conda config --add channels bioconda && conda config --add channels r
+```
+# remove channels
+```{bash}
+conda config --remove channels conda-forge && conda config --remove channels bioconda && conda config --remove channels r
+```
 
+    
 -----
 
 #### Setup SSH into Cheaha through Git Bash
