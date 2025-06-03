@@ -153,6 +153,7 @@ remove channels
 conda config --remove channels conda-forge && conda config --remove channels bioconda && conda config --remove channels r
 ```
 
+- Note: Installing bioconductor packages on windows via conda is headache!! Try tostick to linux for 100% reproducibility!
 
 -----
 
