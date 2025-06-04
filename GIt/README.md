@@ -4,3 +4,14 @@
 
 _Good insights on how to contribute effectively and issues categorization tutorial_
 
+## I am trying to make GitHub actions work with my Patoq book
+first I made a new branch using:
+
+```bash
+   # Create and switch to a new backup branch
+   git checkout -b backup-before-actions
+   
+   # Push this branch to GitHub
+   git push -u origin backup-before-actions 
+```
+
