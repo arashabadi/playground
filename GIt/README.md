@@ -36,5 +36,27 @@ let's push the changes to github:
 git push -u origin main
 ```
 
+### I had some faluires with the GitHub Actions workflow, so I had to revert to some specific commit.
+
+there are two ways to do this:
+1. making a new revert-to-commit branch and pull request to main on github. didn't worked for me. 
+
+2. forced push to main branch:
+
+Temporarily disable protection (Admin access required)
+Go to your repository on GitHub:
+https://github.com/arashabadi/patoq/settings/branches
+
+Under "Branch protection rules", find the rule for main.
+
+Click "Edit", check "Allow force pushes", and save.
+Then run the following commands:
+
+```bash
+git checkout main
+git log --oneline | head -n 5
+git reset --hard HEAD~2 # HEAD~2 is two commits before the last commit (or I can use the commit hash)
+git push origin main --force
+```
 
 
