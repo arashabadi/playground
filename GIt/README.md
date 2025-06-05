@@ -3,9 +3,10 @@
 - [How We Encode Code Reviews at Netlify](https://www.netlify.com/blog/2020/03/05/feedback-ladders-how-we-encode-code-reviews-at-netlify/)
 
 _Good insights on how to contribute effectively and issues categorization tutorial_
+--------------------------------
 
 ## I am trying to make GitHub actions work with my Patoq book
-first I made a new branch using:
+1. first I made a new branch using:
 
 ```bash
    # Create and switch to a new backup branch
@@ -17,7 +18,7 @@ first I made a new branch using:
 The backup branch should be an exact copy of your main branch before we add the GitHub Actions. The GitHub Actions workflow should only be in the main branch
 This way, if something goes wrong, you can easily revert to the pre-Actions state
 
-- where are we?
+2. where are we?
 ```bash
 cd ./patoq && git status | cat
 ```
@@ -35,6 +36,13 @@ let's push the changes to github:
 ```bash
 git push -u origin main
 ```
+
+3. GitHub> Settings> Actions> General> Workflow permissions> Read and write permissions
+4. GitHub> Setting > pages > Source > Branch: gh-pages / root: /(root)
+
+
+--------------------------------
+
 
 ### I had some faluires with the GitHub Actions workflow, so I had to revert to some specific commit.
 
