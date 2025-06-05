@@ -14,4 +14,27 @@ first I made a new branch using:
    # Push this branch to GitHub
    git push -u origin backup-before-actions 
 ```
+The backup branch should be an exact copy of your main branch before we add the GitHub Actions. The GitHub Actions workflow should only be in the main branch
+This way, if something goes wrong, you can easily revert to the pre-Actions state
+
+- where are we?
+```bash
+cd ./patoq && git status | cat
+```
+we have to switch to the main branch:
+```bash
+git checkout main
+```
+now we can add the newly made ".github\workflows\render-book.yml" GitHub Actions workflow to the main branch:
+```bash
+git add .github/ && git commit -m "Add GitHub Actions workflow for Quarto rendering"
+```
+
+let's push the changes to github:
+
+```bash
+git push -u origin main
+```
+
+
 
