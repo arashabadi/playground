@@ -22,7 +22,7 @@
 
 First create an environment with specific YAML file:
 ```{bash}
-conda env create -f myenv.yaml
+conda env create -f myenv.yml
 conda env list # to check if the environment is created
 ```
 
@@ -72,104 +72,39 @@ use_virtualenv("myenv", required = TRUE)
 -----
 
 #### Export conda environment
+Long story short, I wanted to export the environment to a YAML file that can be used to recreate the environment on another system.
+But when it comes to different operating systems, it's not that simple. 
 
-I wanted to clarify an important detail regarding the use of `conda env export` when sharing or recreating environments across different systems.
+By default, `conda env export` includes **OS-specific details** such as build strings and dependency variations that may differ between macOS, Linux, and Windows. 
+This means that an environment file exported on one system might not work seamlessly on another due to these platform-dependent elements.
 
-By default, `conda env export` includes **OS-specific details** such as build strings and dependency variations that may differ between macOS, Linux, and Windows. This means that an environment file exported on one system might not work seamlessly on another due to these platform-dependent elements.
+Seems there are two options to export the environment for better reproducibility across platforms:
+1. `--no-builds`
+2. `--from-history`
 
-To make the environment file more portable and cross-platform compatible, it's recommended to use the `--no-builds` flag, like so:
-
-```bash
-conda env export --no-builds > env_no_builds.yml
-```
-
-This omits build-specific metadata. Additionally, to ensure no system-specific file paths are included (e.g., the local environment `prefix`), you can run:
-
-```bash
-conda env export --no-builds | grep -v "prefix:" > env_no_builds.yml
-```
-
-This approach helps create cleaner, more reproducible environment files that can be used reliably across different operating systems.
-
-
-It depends on how “complete” you need your spec to be versus how much you want Conda to re-solve dependencies per OS:
-
----
-
-## 1. `--no-builds`
-
-* **What it does**
-  Exports the *entire* dependency tree (all direct + transitive deps) with exact versions but strips out platform-specific build hashes.
-* **Resulting file**
-
-  ```yaml
-  dependencies:
-    - python=3.10.4
-    - numpy=1.24.3
-    - pandas=2.0.1
-    - scipy=1.11.0
-    …  
-  ```
-* **Pros**
-
-  * You get *every* package you had, so reproduction is closer to the original.
-  * No build strings → Conda picks the latest compatible build on each OS.
-* **Cons**
-
-  * You’ll also pull in Linux-only libraries (e.g. `libgcc-ng`) that may fail on macOS/Windows unless you manually prune them.
-
----
-
-## 2. `--from-history`
-
-* **What it does**
-  Exports *only* the packages you explicitly installed (`conda install X Y Z`), without any build strings or transitive deps.
-* **Resulting file**
-
-  ```yaml
-  dependencies:
-    - python=3.10
-    - numpy
-    - pandas
-    - pip
-    - pip:
-        - fastapi>=0.95.0
-        - torch
-  ```
-* **Pros**
-
-  * Minimal: Conda re-solves the full dependency graph on the target OS, automatically choosing the right platform variants.
-  * Very portable across Linux, macOS, Windows.
-* **Cons**
-
-  * You may need to add back in any low-level package you specifically need (e.g. a special C library) if it doesn’t get pulled in.
-
----
-
-## 3. Which to pick for Linux → Windows/macOS?
-
+For Linux → Windows/macOS?
 * **For maximum portability:**
   Use **`--from-history`**. It hands off all the dependency solving to the target OS, avoiding leftover Linux-only bits.
 
   ```bash
-  conda env export --from-history \
-    | grep -v '^[[:space:]]*prefix:' \
-    > environment-minimal.yml
+  conda env export --from-history | grep -v '^[[:space:]]*prefix:' > environment-minimal.yml
   ```
 * **If you really need the full tree** (e.g. you know every transitive dep is cross-platform), use **`--no-builds`**, then manually remove any errant Linux-only packages:
 
   ```bash
-  conda env export --no-builds \
-    | grep -v '^[[:space:]]*prefix:' \
-    > environment-full-portable.yml
+  conda env export --no-builds | grep -v '^[[:space:]]*prefix:' > environment-full-portable.yml
   ```
 
+> But what I have found more reliable, is to do more handwork in the first place:
+1. create a YAML file with the packages and structure you want 
+* specify the version of the packages as far as possible. like `r-seurat=5.3.0`
+2. create an activate the environment with the YAML file and let conda decide the rest of versions  
+3. full export the environment to a YAML file via `conda env export`
+4. add versions to those packages that were not specified in the YAML file initially
 
+- if you want to add more packages, you can do it manually by adding them to the YAML file and then re-running the steps above. (fast check of the new added package version decided by conda: `conda list <package_name>`)
 
-1. Try **`--from-history`** first—most cross-platform workflows are covered by rescanning your top-level specs.
-2. If you hit “missing dependency” errors, generate a **`--no-builds`** export and cherry-pick or prune Linux-only entries.
-
-This two-step approach gives you both portability and completeness.
+> The point is to have your initial HANDMADE YAML file updated with the exact written versions (acting like --from-history) that can be used to recreate the environment on another system without any errors.
 
 
 -----
