@@ -19,6 +19,14 @@
 -----
 ### Running interactive RStudio session on top of created anaconda environment
 - There is a documentation for this in [Link](https://docs.rc.uab.edu/cheaha/open_ondemand/ood_rstudio/). I have added a few more steps to make it work.
+
+First create an environment with specific YAML file:
+```{bash}
+conda env create -f myenv.yaml
+conda env list # to check if the environment is created
+```
+
+Then activate the environment:
 ```{bash}
 # Environment Setup window (brfore running interactive RStudio):
 module load Anaconda3
@@ -61,6 +69,109 @@ Or if you're using virtualenv:
 ```r
 use_virtualenv("myenv", required = TRUE)
 ```
+-----
+
+#### Export conda environment
+
+I wanted to clarify an important detail regarding the use of `conda env export` when sharing or recreating environments across different systems.
+
+By default, `conda env export` includes **OS-specific details** such as build strings and dependency variations that may differ between macOS, Linux, and Windows. This means that an environment file exported on one system might not work seamlessly on another due to these platform-dependent elements.
+
+To make the environment file more portable and cross-platform compatible, it's recommended to use the `--no-builds` flag, like so:
+
+```bash
+conda env export --no-builds > env_no_builds.yml
+```
+
+This omits build-specific metadata. Additionally, to ensure no system-specific file paths are included (e.g., the local environment `prefix`), you can run:
+
+```bash
+conda env export --no-builds | grep -v "prefix:" > env_no_builds.yml
+```
+
+This approach helps create cleaner, more reproducible environment files that can be used reliably across different operating systems.
+
+
+It depends on how “complete” you need your spec to be versus how much you want Conda to re-solve dependencies per OS:
+
+---
+
+## 1. `--no-builds`
+
+* **What it does**
+  Exports the *entire* dependency tree (all direct + transitive deps) with exact versions but strips out platform-specific build hashes.
+* **Resulting file**
+
+  ```yaml
+  dependencies:
+    - python=3.10.4
+    - numpy=1.24.3
+    - pandas=2.0.1
+    - scipy=1.11.0
+    …  
+  ```
+* **Pros**
+
+  * You get *every* package you had, so reproduction is closer to the original.
+  * No build strings → Conda picks the latest compatible build on each OS.
+* **Cons**
+
+  * You’ll also pull in Linux-only libraries (e.g. `libgcc-ng`) that may fail on macOS/Windows unless you manually prune them.
+
+---
+
+## 2. `--from-history`
+
+* **What it does**
+  Exports *only* the packages you explicitly installed (`conda install X Y Z`), without any build strings or transitive deps.
+* **Resulting file**
+
+  ```yaml
+  dependencies:
+    - python=3.10
+    - numpy
+    - pandas
+    - pip
+    - pip:
+        - fastapi>=0.95.0
+        - torch
+  ```
+* **Pros**
+
+  * Minimal: Conda re-solves the full dependency graph on the target OS, automatically choosing the right platform variants.
+  * Very portable across Linux, macOS, Windows.
+* **Cons**
+
+  * You may need to add back in any low-level package you specifically need (e.g. a special C library) if it doesn’t get pulled in.
+
+---
+
+## 3. Which to pick for Linux → Windows/macOS?
+
+* **For maximum portability:**
+  Use **`--from-history`**. It hands off all the dependency solving to the target OS, avoiding leftover Linux-only bits.
+
+  ```bash
+  conda env export --from-history \
+    | grep -v '^[[:space:]]*prefix:' \
+    > environment-minimal.yml
+  ```
+* **If you really need the full tree** (e.g. you know every transitive dep is cross-platform), use **`--no-builds`**, then manually remove any errant Linux-only packages:
+
+  ```bash
+  conda env export --no-builds \
+    | grep -v '^[[:space:]]*prefix:' \
+    > environment-full-portable.yml
+  ```
+
+
+
+1. Try **`--from-history`** first—most cross-platform workflows are covered by rescanning your top-level specs.
+2. If you hit “missing dependency” errors, generate a **`--no-builds`** export and cherry-pick or prune Linux-only entries.
+
+This two-step approach gives you both portability and completeness.
+
+
 -----
 
 ### Connect conda environment and Kernel in JupyterLab
