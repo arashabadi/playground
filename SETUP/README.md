@@ -71,7 +71,7 @@ use_virtualenv("myenv", required = TRUE)
 ```
 -----
 
-#### Export conda environment
+### Export Conda Environment
 Long story short, I wanted to export the environment to a YAML file that can be used to recreate the environment on another system.
 But when it comes to different operating systems, it's not that simple. 
 
