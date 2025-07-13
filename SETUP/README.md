@@ -9,6 +9,7 @@
 - [HPC](#hpc)
 - [Local_MacOS](#local_macos)
 - [Local_Windows](#local_windows)
+- [code_editor](#code_editor)
 
 ## HPC
 ### UAB Cheaha Supercomputer
@@ -215,4 +216,18 @@ conda config --remove channels conda-forge && conda config --remove channels bio
 #### The problem of Remote-SSH in VSCode and login node access in Cheaha!
 
 > Nothing should be run on the login node, especially IDE SSH sessions. Any processes run in or by these IDEs are run using login node resources. Even if you request an interactive job within the IDE, only the processes run within that terminal session are on the compute node, everything else is still run on the login node. We automatically kill any IDE server process on the login node. If you want to use an IDE to access Cheaha, we have documentation on how to use VSCode to access a compute node directly on our documentation at [Link](https://docs.rc.uab.edu/cheaha/open_ondemand/hpc_desktop/#downloading-and-installing-vscode-and-vscode-server).
+
+
+## code_editor
+### Cursor
+- To make Make Cursor AI Sidebar icons vertical:
+You should go to VSCode Settings and search for `workbench.activityBar.orientation` and set it to `vertical`. (or JASON change: `"workbench.activityBar.orientation": "vertical"`)
+This YouTube video is not working: [Link](https://www.youtube.com/watch?v=x3JB6LuWXeE)
+
+
+
+
+
+
+
 
