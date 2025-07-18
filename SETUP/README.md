@@ -121,8 +121,7 @@ python -m ipykernel install --user --name myenv --disply-name "myenv"
 
 ## Local_MacOS
 
-will be completed soon!
-
+visit [macOS/README.md](./macOS/README.md) for more details.
 
 
 ## Local_Windows
