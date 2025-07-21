@@ -15,7 +15,7 @@
 ### UAB Cheaha Supercomputer
 - where Alabama's natural beauty meets computational chaos, because nothing says "high-performance computing" like a server room that occasionally gets visited by curious raccoons!
 
-- Information on all partitions](https://docs.rc.uab.edu/cheaha/hardware/#summary). The only partitions that have access to GPUs are the amperenodes and pascalnodes.
+- [Information on all partitions](https://docs.rc.uab.edu/cheaha/hardware/#summary). The only partitions that have access to GPUs are the amperenodes and pascalnodes.
 - [Cheaha User Guide](https://docs.rc.uab.edu/)
 -----
 ### Running interactive RStudio session on top of created anaconda environment
