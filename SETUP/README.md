@@ -124,6 +124,86 @@ python -m ipykernel install --user --name myenv --disply-name "myenv"
 visit [macOS/README.md](./macOS/README.md) for more details.
 
 
+### SSH setup for Cheaha on a new MacBook
+
+1. Create .ssh directory
+```bash
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+```
+2. Generate a new keypair for Cheaha
+```bash
+ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519_cheaha -C "BLAZERID@uab.edu"
+```
+	•	Choose a strong passphrase.
+	•	This passphrase will be asked each time you connect.
+	•	Do not add this key to Keychain, so the passphrase is always required.
+
+3. Show your public key
+```bash
+cat ~/.ssh/id_ed25519_cheaha.pub
+```
+Copy the full one-line key. (or use pbcopy)
+
+4. Configure SSH
+
+Edit ~/.ssh/config: (line `nano ~/.ssh/config`)
+```bash
+Host cheaha
+  HostName cheaha.rc.uab.edu
+  User BLAZERID
+  IdentityFile ~/.ssh/id_ed25519_cheaha
+  IdentitiesOnly yes
+  AddKeysToAgent no
+  UseKeychain no
+  PreferredAuthentications publickey,keyboard-interactive,password
+```
+Save and lock permissions:
+```bash
+chmod 600 ~/.ssh/config
+```
+5. Install your public key on Cheaha
+
+Log in once with password:
+```bash
+ssh BLAZERID@cheaha.rc.uab.edu
+```
+Then on Cheaha:
+```bash
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+nano ~/.ssh/authorized_keys
+```
+Paste the contents of id_ed25519_cheaha.pub into authorized_keys, save, exit:
+```bash
+chmod 600 ~/.ssh/authorized_keys
+```
+6. Test connection
+
+From your Mac:
+```bash
+ssh -vv cheaha
+```
+	•	If public-key auth is allowed: you will see “Offering public key: …id_ed25519_cheaha” and be asked for your key’s passphrase.
+	•	If it falls back to password: Cheaha’s front end is not accepting keys; you must keep using your BLAZERID password until RC enables keys.
+
+7. Permissions check (common fixes)
+
+On your Mac:
+```bash
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/id_ed25519_cheaha
+chmod 644 ~/.ssh/id_ed25519_cheaha.pub
+```
+On Cheaha:
+```bash
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+```
+
+Note: As of now Cheaha’s login gateway often enforces password even if keys are installed. If public-key login is disabled, you cannot replace your BLAZERID password with your key’s passphrase until UAB RC enables it. This guide prepares you so you are ready the moment keys are accepted.
+
+
 ## Local_Windows
 
 #### Run Conda in Git Bash
@@ -202,14 +282,6 @@ conda config --remove channels conda-forge && conda config --remove channels bio
 - Note: Installing bioconductor packages on windows via conda is headache!! Try tostick to linux for 100% reproducibility!
 
 -----
-
-#### Setup SSH into Cheaha through Git Bash
-
-
-
-
-
-
 
 
 #### The problem of Remote-SSH in VSCode and login node access in Cheaha!
