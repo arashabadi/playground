@@ -121,7 +121,7 @@ python -m ipykernel install --user --name myenv --disply-name "myenv"
 
 ## Local_MacOS
 
-visit [macOS/README.md](./macOS/README.md) for more details.
+visit [macOS/README.md](./macOS/README.md) for macOS shorcuts and other notes.
 
 
 ### SSH setup for Cheaha on a new MacBook
