@@ -1,11 +1,4 @@
-Here I will document the setup of my macOS MacBook Pro.
-
-## Table of Contents
-- [ssh to Github](#ssh-to-github)
-- [ssh to Cheaha](#ssh-to-cheaha)
-- [UAB VPN](#uab-vpn)
-- [Jupyter lab](#jupyter-lab)
-- [VSCode](#vscode)
+Here I will document the shorcuts and other extra notes of macOS.
 
 
 ## Jupyter lab
