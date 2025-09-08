@@ -22,6 +22,9 @@
 ```{bash}
 srun -p amperenodes --gres=gpu:1 --pty bash -i
 ```
+
+> Information on all our partitions here: https://docs.rc.uab.edu/cheaha/hardware/#summary . The only partitions that have access to GPUs are the **amperenodes** and **pascalnodes**.
+
 -----
 ### Running interactive RStudio session on top of created anaconda environment
 - There is a documentation for this in [Link](https://docs.rc.uab.edu/cheaha/open_ondemand/ood_rstudio/). I have added a few more steps to make it work.
