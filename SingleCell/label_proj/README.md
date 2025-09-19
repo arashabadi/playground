@@ -104,7 +104,7 @@ Activation in batch jobs must initialize the shell, for example:
 ```bash
 # inside your sbatch script, before conda activate
 source "$HOME/miniconda3/etc/profile.d/conda.sh" || eval "$(conda shell.bash hook)"
-conda activate memory_rechallenge_v2_hpc
+conda activate env_hpc
 ```
 Tip
 - Prefer `pytorch-cuda=<match>` meta package instead of pinning `cudatoolkit` when using PyTorch channel binaries.
@@ -129,7 +129,7 @@ Example sbatch
 module purge
 module load Mamba
 source "$HOME/miniconda3/etc/profile.d/conda.sh" || eval "$(conda shell.bash hook)"
-conda activate memory_rechallenge_v2_hpc
+conda activate env_hpc
 
 python analysis/03_annotation/scANVI/job/scripts/run_scanvi.py
 ```
@@ -219,7 +219,7 @@ adata.obs["pred_conf"] = maxp
 - Seed is fixed via `scvi.settings.seed = 0`.
 - Archive the environment YAML. You can export a lockfile for exact versions:
 ```bash
-mamba env export -n memory_rechallenge_v2_hpc > env_export_locked.yml
+mamba env export -n env_hpc > env_export_locked.yml
 ```
 
 
