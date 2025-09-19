@@ -1,0 +1,29 @@
+# environment-cheaha-gpu.yml
+name: env_hpc
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  # Python dependencies
+  - python=3.12.11
+  - scanpy=1.11.3
+  - anndata=0.11.4
+  - leidenalg=0.10.2
+  - matplotlib=3.10.3
+  - seaborn=0.13.2
+  - ipykernel=6.29.5
+  - numpy=2.2.6
+  - pandas=2.3.1
+  - scrublet=0.2.3
+  - scvi-tools=1.3.3
+  - python-igraph=0.11.9
+  - pytorch=2.5.1
+  - torchvision=0.20.1
+  - torchaudio=2.5.1
+  - cudatoolkit=11.8
+  - pip=25.1.1
+  - pip:
+    - scikit-misc==0.5.1 #HVG flavor seurat_v3 
