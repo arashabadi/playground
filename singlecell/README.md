@@ -126,4 +126,9 @@ https://github.com/xleizi/easySCF
 No to seuratdisk as it works with V3 assay and outdated. It also crashes on heavy datasets!
 
 
+Also:
+https://github.com/theislab/anndata2ri
+
+
+
 
