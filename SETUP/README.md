@@ -306,6 +306,27 @@ This YouTube video is not working: [Link](https://www.youtube.com/watch?v=x3JB6L
 
 
 
+----
+# Troubleshooting #1
+I overwrote my PATH with an invalid value, so the shell couldn’t find any system commands:
+
+`(base) export PATH=~/apps/cellranger-10.0.0:PATH` 
+
+Which replaced my entire PATH with "my-cellranger-path:PATH”, removing all real system paths and breaking command lookup.
+
+By running this:
+`export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
+
+I solved the problem and restored access to all essential system commands.
+
+Each directory contains different categories of executables:
+
+- `/usr/local/sbin`	Admin tools installed locally
+- `/usr/local/bin`	User-level programs installed locally
+- `/usr/sbin`	System administration tools
+- `/usr/bin`	Most standard user commands (ls, cp, python, etc.)
+- `/sbin`	System binaries for boot/setup tasks
+- `/bin`	Basic essential binaries (sh, cat, echo)
 
 
 
