@@ -26,6 +26,18 @@ srun -p amperenodes --gres=gpu:1 --pty bash -i
 > Information on all our partitions here: https://docs.rc.uab.edu/cheaha/hardware/#summary . The only partitions that have access to GPUs are the **amperenodes** and **pascalnodes**.
 
 -----
+### Submitting .ipynb Jobs to Cheaha
+If you prefer to submit your code in a Jupyter Notebook as is, you can pass the notebook as a script in your job submission using the following command:
+
+`jupyter nbconvert --to notebook --execute <script> --output <result.ipynb>`
+
+Replace the `<script>` with the filename of your Jupyter Notebook, and `<result.ipynb>` with your preferd output file name that will appear in your working directory after the job completes. Also, make sure to include the required resources at the beginning of your job script. Feel free to refer to the example batch job submission script at this https://docs.rc.uab.edu/cheaha/slurm/submitting_jobs/#a-simple-batch-job .
+
+This is still in development; however, you can find the core details and instructions on our GitHub page:
+https://github.com/uabrc/uabrc.github.io/issues/913
+
+Please try this out and share your experience.
+-----
 ### Running interactive RStudio session on top of created anaconda environment
 - There is a documentation for this in [Link](https://docs.rc.uab.edu/cheaha/open_ondemand/ood_rstudio/). I have added a few more steps to make it work.
 
