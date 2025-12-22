@@ -6,6 +6,12 @@
 2. If that fails (common for Seurat on Cheaha), **fall back to Conda (conda-forge)**.
 3. Conda is a **workaround**, not the ideal long-term R solution.
 
+> Summary:
+> * CRAN works → **use it**
+> * CRAN fails → **Conda-forge temporarily**
+> * Long-term project → **CRAN + Bioconductor + renv**
+
+
 ---
 
 ## Step 0 — Start RStudio Interactively on Cheaha
@@ -89,7 +95,6 @@ conda activate r_env
 
 ![Environment Setup screenshot](./envsetup.png)
 
-*Paste these commands into the Open OnDemand Environment Setup window before launching RStudio.*
 
 Then launch the job.
 
@@ -107,7 +112,6 @@ All paths must point to `.conda/envs/r_env`.
 
 If not, your setup is wrong.
 
----
 
 ## Important Warning About Conda + R on Cheaha
 
@@ -125,7 +129,6 @@ Common issues:
 
 Conda is **acceptable as a temporary workaround**, not a permanent R ecosystem.
 
----
 
 ## Best Practice (Strongly Recommended)
 
@@ -144,14 +147,8 @@ renv::init()
 
 This is the cleanest and most future-proof workflow.
 
----
 
-## Decision Rule (Memorize This)
+## More info about running interactive RStudio session on top of created anaconda environment:
 
-* CRAN works → **use it**
-* CRAN fails → **Conda-forge temporarily**
-* Long-term project → **CRAN + Bioconductor + renv**
+https://github.com/arashabadi/playground/tree/main/setup#running-interactive-rstudio-session-on-top-of-created-anaconda-environment
 
-Anything else is technical debt.
-
----
