@@ -60,7 +60,7 @@ Move to Conda.
 
 ## Step 3 — Conda-forge Approach (Stable Fallback)
 
-### 1. Create a Conda environment with Seurat
+### 1. Create a Conda environment with Seurat (in terminal)
 
 ```bash
 module load Anaconda3
@@ -86,6 +86,10 @@ In **Open OnDemand → RStudio → Environment Setup**:
 module load Anaconda3
 conda activate r_env
 ```
+
+![Environment Setup screenshot](./envsetup.png)
+
+*Paste these commands into the Open OnDemand Environment Setup window before launching RStudio.*
 
 Then launch the job.
 
